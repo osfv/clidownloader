@@ -1,0 +1,5 @@
+yt-dlp>=2024.1.0
+keyring>=24.0
+keyrings.alt>=5.0
+click>=8.1
+rich>=13.0
