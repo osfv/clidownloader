@@ -123,7 +123,7 @@ def download(url, *, out, audio=None, embed_art=True, max_quality=2160,
                 prog.update(task_id, description=f"[cyan]{title[:60]}[/cyan]")
 
                 if not playlist and info_dict.get("_type") == "playlist":
-                    error("this is a playlist — add --playlist to download all items")
+                    error("this is a playlist \u2014 add --playlist to download all items")
                     return False
 
                 ydl.download([url])
