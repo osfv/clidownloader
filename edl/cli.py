@@ -23,7 +23,7 @@ from edl.utils import get_default_download_dir
 @click.group(invoke_without_command=True)
 @click.pass_context
 def cli(ctx: click.Context) -> None:
-    """edl \u2014 edgy youtube downloader"""
+    """edl — edgy youtube downloader"""
     print_banner()
     if ctx.invoked_subcommand is None:
         if is_logged_in():
