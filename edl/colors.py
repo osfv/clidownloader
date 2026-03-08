@@ -19,7 +19,7 @@ def print_banner() -> None:
     banner = Text()
     banner.append("edl", style="bold cyan")
     banner.append("  //  edgy youtube downloader", style="dim white")
-    banner.append("\n4k  •  mp3  •  lossless  •  playlists  •  sponsorblock", style="dim cyan")
+    banner.append("\n4k  \u2022  mp3  \u2022  lossless  \u2022  playlists  \u2022  sponsorblock", style="dim cyan")
     console.print(Panel(banner, border_style="cyan", padding=(0, 2)))
 
 
@@ -28,11 +28,11 @@ def info(msg: str) -> None:
 
 
 def success(msg: str) -> None:
-    console.print(f"[success]✓ {msg}[/success]")
+    console.print(f"[success]\u2713 {msg}[/success]")
 
 
 def error(msg: str) -> None:
-    console.print(f"[error]✗ {msg}[/error]")
+    console.print(f"[error]\u2717 {msg}[/error]")
 
 
 def warn(msg: str) -> None:
