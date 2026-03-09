@@ -5,8 +5,10 @@ edgy youtube downloader — 4k, mp3+art, lossless, sponsorblock, playlists
 ## installation
 
 ```bash
-pip install edl
+pip install git+https://github.com/osfv/clidownloader.git
 ```
+
+> requires python 3.10+ and pip 21+
 
 ## requirements
 
