@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "edl"
-version = "0.2.0"
+version = "0.2.1"
 description = "edgy youtube downloader with login, 4k, mp3+art, lossless, sponsorblock"
 authors = [{name = "edl", email = "edl@example.com"}]
 license = {text = "MIT"}
@@ -22,7 +22,7 @@ classifiers = [
 dependencies = [
     "yt-dlp>=2024.1.0",
     "keyring>=24.0",
-    "keyrings.alt>=5.0",
+    "keyrings.alt>=4.0",
     "click>=8.1",
     "rich>=13.0",
 ]
