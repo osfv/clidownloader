@@ -1,74 +1,120 @@
-# edl
+<div align="center">
 
-edgy youtube downloader — 4k, mp3+art, lossless, sponsorblock, playlists
+# ⬇️ edl
 
-## installation
+**a better video downloader.**
+
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![yt-dlp](https://img.shields.io/badge/powered%20by-yt--dlp-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://github.com/yt-dlp/yt-dlp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
+`edl` is a yt-dlp CLI wrapper that cuts the noise. 4K video, lossless audio, SponsorBlock, playlist concurrency, and browser cookie support — all from one clean command.
+
+</div>
+
+---
+
+## 📦 Installation
 
 ```bash
 pip install git+https://github.com/osfv/clidownloader.git
 ```
 
-> requires python 3.10+ and pip 21+
+> Requires **Python 3.10+** and **pip 21+**
 
-## requirements
+### FFmpeg (required for audio & subtitles)
 
-- python 3.10+
-- ffmpeg / ffprobe (for audio conversion, subtitle embedding, album art)
-  - ubuntu/debian: `sudo apt install ffmpeg`
-  - macos: `brew install ffmpeg`
-  - windows: https://ffmpeg.org/download.html
+| Platform | Command |
+|----------|---------|
+| Ubuntu / Debian | `sudo apt install ffmpeg` |
+| macOS | `brew install ffmpeg` |
+| Windows | [ffmpeg.org/download.html](https://ffmpeg.org/download.html) |
 
-## usage
+---
+
+## 🚀 Usage
 
 ```bash
-# show status
+# Check status
 edl status
 
-# login (stores credentials in system keyring)
+# Authenticate (credentials stored in system keyring)
 edl login
-
-# logout
 edl logout
+```
 
-# download video in 4k
+### Downloading
+
+```bash
+# Download video in best quality (up to 4K)
 edl dl https://youtube.com/watch?v=example
 
-# download as mp3 with embedded album art
+# Download as MP3 with embedded album art
 edl dl https://youtube.com/watch?v=example --audio mp3
 
-# download in 1080p
-edl dl https://youtube.com/watch?v=example --quality 1080
-
-# download lossless audio
+# Download lossless audio
 edl dl https://youtube.com/watch?v=example --audio flac
 
-# download full playlist
+# Download at a specific resolution
+edl dl https://youtube.com/watch?v=example --quality 1080
+
+# Download a full playlist
 edl dl https://youtube.com/playlist?list=example --playlist
 
-# skip sponsor segments automatically
-edl dl https://youtube.com/watch?v=example --sponsorblock
-
-# embed subtitles
-edl dl https://youtube.com/watch?v=example --subtitles
-
-# use cookies from your browser
-edl dl https://youtube.com/watch?v=example --cookies-from-browser chrome
-
-# parallel playlist download (4 workers)
+# Download playlist with 4 parallel workers
 edl dl https://youtube.com/playlist?list=example --playlist --concurrent 4
 
-# custom output directory
+# Skip sponsor segments automatically
+edl dl https://youtube.com/watch?v=example --sponsorblock
+
+# Embed subtitles
+edl dl https://youtube.com/watch?v=example --subtitles
+
+# Use cookies from your browser (for age-restricted / members-only content)
+edl dl https://youtube.com/watch?v=example --cookies-from-browser chrome
+
+# Save to a custom output directory
 edl dl https://youtube.com/watch?v=example --out ~/videos
 ```
 
-## features
+---
 
-- secure credential storage via system keyring
-- 4k / 1440p / 1080p / 720p video download
-- audio extraction (mp3, flac, opus, m4a, wav) with embedded album art
-- playlist downloads with optional concurrency
-- sponsorblock integration (auto-skip sponsors, self-promos, interactions)
-- subtitle embedding
-- browser cookie extraction (chrome, firefox, safari, edge, brave)
-- beautiful rich terminal output with progress bars
-- cross-platform config management (linux/macos/windows)
+## ✨ Features
+
+- 🔐 **Secure auth** — credentials stored in your system keyring, never in plaintext
+- 🎬 **4K/1440p/1080p/720p** video download
+- 🎵 **Audio extraction** — MP3, FLAC, Opus, M4A, WAV with embedded album art
+- 📃 **Playlist support** — download entire playlists with optional concurrency
+- 🚫 **SponsorBlock** — auto-skip sponsors, self-promos, and interaction reminders
+- 💬 **Subtitle embedding** — bake subs directly into the output
+- 🍪 **Browser cookies** — Chrome, Firefox, Safari, Edge, Brave
+- 📊 **Rich terminal UI** — progress bars and clean output via [rich](https://github.com/Textualize/rich)
+- 🖥️ **Cross-platform** — Linux, macOS, Windows
+
+---
+
+## 🗂️ Project Structure
+
+```
+clidownloader/
+├── edl/                # Core package
+├── tests/              # Test suite
+├── pyproject.toml      # Project metadata & build config
+├── requirements.txt    # Runtime dependencies
+└── requirements-dev.txt  # Dev dependencies
+```
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repo
+2. Install dev dependencies: `pip install -r requirements-dev.txt`
+3. Make your changes and add tests
+4. Open a pull request
+
+---
+
+## 📄 License
+
+MIT.
